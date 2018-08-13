@@ -10,27 +10,18 @@
         <local:TestViewModel/>
     </Window.DataContext>
     <Grid>
-        <TabControl>
-            <TabItem Header="{Binding SelectedValue}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="119*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <ComboBox ItemsSource="{Binding Reports}" Grid.Column="1" DisplayMemberPath="ReportName" SelectedItem="{Binding SelectedReport}"/>
-                    <ContentControl DataContext="{Binding SelectedReport}" Content="{Binding ReportView}" Grid.Row="1" Grid.ColumnSpan="2"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Tab 2">
-                <Grid>
-                    <local:ReportControl />
-                </Grid>
-            </TabItem>
 
-        </TabControl>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="119*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ComboBox ItemsSource="{Binding Reports}" Grid.Column="1" DisplayMemberPath="ReportName" SelectedItem="{Binding SelectedReport}"/>
+        <ContentControl DataContext="{Binding SelectedReport}" Content="{Binding ReportView}" Grid.Row="1" Grid.ColumnSpan="2"/>
     </Grid>
+
+
 </Window>
