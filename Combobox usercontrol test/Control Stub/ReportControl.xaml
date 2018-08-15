@@ -14,7 +14,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Content="{Binding Label}"/>
-                <ComboBox ItemsSource="{Binding ItemsSource }" DisplayMemberPath="Description" SelectedValuePath="Value" SelectedValue="{Binding PrivateValue}" Grid.Column="1"/>
+                <ComboBox ItemsSource="{Binding PrivateItemsSource }" DisplayMemberPath="Description" SelectedValuePath="Value" SelectedValue="{Binding PrivateValue}" Grid.Column="1"/>
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="String_Text">

@@ -45,6 +45,13 @@ namespace Combobox_usercontrol_test
             }
         }
 
+        public IEnumerable PrivateItemsSource {
+            get
+            {
+                return _PrivateSource;
+            }
+        }
+
         public String Label
         {
             get { return (String)GetValue(LabelProperty); }
@@ -66,10 +73,13 @@ namespace Combobox_usercontrol_test
         // Using a DependencyProperty as the backing store for DataType.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DataTypeProperty =
             DependencyProperty.Register("DataType", typeof(DataTypes), typeof(ReportParameter), new PropertyMetadata(DataTypes.String));
+        private IEnumerable _PrivateSource;
 
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
         {
             base.OnPropertyChanged(e);
+            if (e.Property == ItemsSourceProperty && e.NewValue != null)
+                _PrivateSource = ItemsSource;
         }
 
     }
